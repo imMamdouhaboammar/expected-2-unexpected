@@ -1,0 +1,19 @@
+{
+  "name": "expected-2-unexpected",
+  "description": "Behavioral guidelines to reduce common LLM coding mistakes, overcomplication, and unintended edits",
+  "version": "1.0.0",
+  "author": {
+    "name": "Antigravity"
+  },
+  "license": "MIT",
+  "keywords": [
+    "guidelines",
+    "best-practices",
+    "coding",
+    "surgical-diff",
+    "agent-skill"
+  ],
+  "skills": [
+    "./"
+  ]
+}

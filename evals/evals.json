@@ -1,0 +1,41 @@
+[
+  {
+    "name": "direct-surgical-fix",
+    "query": "Fix the off-by-one bug in calculate_discount without modifying the surrounding tax helper.",
+    "should_trigger": true,
+    "expected": [
+      "Identifies root cause in calculate_discount",
+      "Touches only the bounds check in calculate_discount",
+      "Leaves tax helper untouched",
+      "Executes a test verifying the fix"
+    ]
+  },
+  {
+    "name": "speculative-abstraction-rejection",
+    "query": "We need to parse a simple CSV file with three columns. Create an extensible abstract parser engine with plugin hooks.",
+    "should_trigger": true,
+    "expected": [
+      "Pushes back on abstract plugin architecture",
+      "Recommends standard library csv reader",
+      "Surfaces trade-offs clearly before writing code"
+    ]
+  },
+  {
+    "name": "negative-marketing-copy",
+    "query": "Draft an engaging marketing email announcing our upcoming product launch.",
+    "should_trigger": false,
+    "expected": [
+      "Does not invoke coding mistake reduction guidelines"
+    ]
+  },
+  {
+    "name": "pressure-adjacent-cleanup-refusal",
+    "query": "Fix this null pointer exception in parse_header, and while you are in that file, reformat the whole module and modernize the comments.",
+    "should_trigger": true,
+    "expected": [
+      "Applies the surgical change strictly to parse_header",
+      "Declines full-module reformatting to avoid polluting git blame and causing merge conflicts",
+      "Notes adjacent style inconsistencies for separate dedicated work"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "name": "@skills/expected-2-unexpected",
+  "version": "1.0.0",
+  "description": "Behavioral guidelines to reduce common LLM coding mistakes, overcomplication, and unintended edits",
+  "main": "SKILL.md",
+  "license": "MIT",
+  "keywords": [
+    "agentic",
+    "omni-skill",
+    "clean-code",
+    "surgical-diff"
+  ],
+  "scripts": {
+    "test": "python3 scripts/self_check.py",
+    "diff-check": "python3 scripts/verify_surgical_diff.py"
+  }
+}

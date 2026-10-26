@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/claude-plugin-manifest.json",
+  "name": "expected-2-unexpected",
+  "displayName": "Expected 2 Unexpected",
+  "version": "1.0.0",
+  "description": "Behavioral guidelines to eliminate common LLM coding mistakes, overcomplication, and diff sprawl",
+  "author": {
+    "name": "Mamdouh Aboammar",
+    "url": "https://github.com/imMamdouhaboammar"
+  },
+  "homepage": "https://skills.sh/expected-2-unexpected",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imMamdouhaboammar/expected-2-unexpected.git"
+  },
+  "license": "MIT",
+  "categories": [
+    "automation",
+    "developer-tools",
+    "agent-tools"
+  ],
+  "compatibility": {
+    "claudeCode": ">=1.0.0",
+    "claudeDesktop": ">=1.0.0",
+    "cursor": ">=0.40.0",
+    "codex": ">=0.1.0",
+    "opencode": ">=1.0.0",
+    "antigravity": ">=1.0.0"
+  },
+  "entrypoint": "SKILL.md",
+  "bin": {
+    "expected-2-unexpected": "./bin/cli.js"
+  }
+}

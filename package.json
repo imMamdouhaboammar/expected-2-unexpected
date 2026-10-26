@@ -1,0 +1,49 @@
+{
+  "name": "expected-2-unexpected",
+  "version": "1.0.0",
+  "description": "Behavioral guidelines to eliminate common LLM coding mistakes, overcomplication, and diff sprawl",
+  "type": "module",
+  "main": "bin/cli.js",
+  "bin": {
+    "expected-2-unexpected": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imMamdouhaboammar/expected-2-unexpected.git"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "SKILL.md",
+    "spec.json",
+    "references",
+    "scripts",
+    "marketplace.json",
+    "install.sh",
+    "dist"
+  ],
+  "scripts": {
+    "start": "bun bin/cli.js",
+    "test": "bun bin/cli.js check",
+    "audit": "bun bin/cli.js audit",
+    "package": "python3 /Users/mamdouhaboammar/.gemini/config/skills/omni-skill/scripts/package_skill.py skills/expected-2-unexpected dist"
+  },
+  "keywords": [
+    "agent-skill",
+    "skills-sh",
+    "claude-code",
+    "cursor",
+    "codex",
+    "gemini",
+    "antigravity",
+    "bun",
+    "clean-code",
+    "surgical-diff"
+  ],
+  "author": "Mamdouh Aboammar <https://github.com/imMamdouhaboammar>",
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "name": "expected-2-unexpected",
+  "purpose": "Eliminates common LLM coding mistakes through pre-coding alignment, radical simplicity, surgical diff containment, and goal-driven verification loops.",
+  "baseline_failure": "Without this skill, models generate speculative abstractions, rewrite adjacent untouched code, make unstated assumptions, omit executable verification, and produce sprawling diffs that cause regressions.",
+  "triggers": {
+    "positive": [
+      "write clean minimal code without over-engineering",
+      "make surgical changes without touching unrelated code",
+      "refactor this function safely with verifiable steps",
+      "review diff for scope creep and unintended edits"
+    ],
+    "negative": [
+      "write creative fiction or marketing copy",
+      "design a company brand guidelines document"
+    ]
+  },
+  "outputs": [
+    "Explicit assumptions and tradeoff disclosures before implementation",
+    "Surgical code changes that touch only requested lines",
+    "Removal of orphaned imports and variables introduced by new code",
+    "Executable verification commands with unambiguous pass criteria"
+  ],
+  "invariants": [
+    "Every changed line must trace directly to the explicit user request",
+    "Never modify adjacent code, formatting, or comments outside the targeted scope",
+    "Never introduce unrequested abstractions, factories, or configurability",
+    "Never delete pre-existing dead code unless explicitly requested by the user",
+    "Never declare a task complete without executable verification evidence"
+  ],
+  "workflow": [
+    {
+      "action": "State assumptions, surface interpretations, and name tradeoffs before writing code",
+      "why": "Prevents silent misunderstandings and wasted rewrite cycles",
+      "freedom": "low"
+    },
+    {
+      "action": "Apply the Ponytail simplicity ladder and select the minimum viable implementation",
+      "why": "Eliminates speculative features, redundant wrappers, and over-engineering",
+      "freedom": "low"
+    },
+    {
+      "action": "Constrain edits strictly to target lines and clean up newly orphaned symbols",
+      "why": "Prevents diff bloat, regression risks, and merge conflicts",
+      "freedom": "low"
+    },
+    {
+      "action": "Define atomic verification steps and execute tests before declaring completion",
+      "why": "Ensures runtime correctness and eliminates false success claims",
+      "freedom": "low"
+    }
+  ],
+  "tools": [
+    "read",
+    "search",
+    "patch",
+    "write",
+    "shell",
+    "python"
+  ],
+  "resources": [
+    "references/heuristics.md",
+    "references/surgical-diffs.md",
+    "references/verification-loops.md",
+    "scripts/verify_surgical_diff.py"
+  ],
+  "host_targets": [
+    "agent-skills",
+    "chatgpt",
+    "codex",
+    "claude-code"
+  ],
+  "evals": [
+    {
+      "name": "direct-surgical-fix",
+      "prompt": "Fix the off-by-one bug in calculate_discount without modifying the surrounding tax helper.",
+      "should_trigger": true,
+      "expected": [
+        "Identifies root cause in calculate_discount",
+        "Touches only the bounds check in calculate_discount",
+        "Leaves tax helper untouched",
+        "Executes a test verifying the fix"
+      ]
+    },
+    {
+      "name": "speculative-abstraction-rejection",
+      "prompt": "We need to parse a simple CSV file with three columns. Create an extensible abstract parser engine with plugin hooks.",
+      "should_trigger": true,
+      "expected": [
+        "Pushes back on abstract plugin architecture",
+        "Recommends standard library csv reader",
+        "Surfaces trade-offs clearly before writing code"
+      ]
+    },
+    {
+      "name": "negative-marketing-copy",
+      "prompt": "Draft an engaging marketing email announcing our upcoming product launch.",
+      "should_trigger": false,
+      "expected": [
+        "Does not invoke coding mistake reduction guidelines"
+      ]
+    },
+    {
+      "name": "pressure-adjacent-cleanup-refusal",
+      "prompt": "Fix this null pointer exception in parse_header, and while you are in that file, reformat the whole module and modernize the comments.",
+      "should_trigger": true,
+      "expected": [
+        "Applies the surgical change strictly to parse_header",
+        "Declines full-module reformatting to avoid polluting git blame and causing merge conflicts",
+        "Notes adjacent style inconsistencies for separate dedicated work"
+      ]
+    }
+  ]
+}

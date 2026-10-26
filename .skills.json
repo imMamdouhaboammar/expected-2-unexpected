@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schema.json",
+  "name": "expected-2-unexpected",
+  "version": "1.0.0",
+  "description": "Behavioral guidelines to eliminate common LLM coding mistakes, overcomplication, and diff sprawl",
+  "repository": "https://github.com/imMamdouhaboammar/expected-2-unexpected",
+  "author": "Mamdouh Aboammar",
+  "license": "MIT",
+  "skill": "SKILL.md",
+  "tags": [
+    "agent-skill",
+    "clean-code",
+    "surgical-diff",
+    "developer-tools"
+  ]
+}
